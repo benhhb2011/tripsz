@@ -3,290 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌟 我的深圳前海大冒險！Day 1 歡樂行程表 🌟</title>
+    <title>🌟 4大6小大手拉小手！深圳前海快樂大冒險 🌟</title>
     <style>
+        /* 充滿童趣的超可愛設計 */
         body {
             font-family: 'Comic Sans MS', 'Chalkboard SE', 'Microsoft JhengHei', sans-serif;
-            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), 
-                        url('https://unsplash.com') no-repeat center center fixed;
-            background-size: cover;
-            color: #1e293b;
+            background-color: #f0faff;
+            color: #333;
             margin: 0;
             padding: 20px;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.92); 
-            backdrop-filter: blur(10px);
+            background: #ffffff;
             border-radius: 30px;
-            padding: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            border: 4px solid #4ade80;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 5px solid #ffd54f;
         }
         h1 {
             text-align: center;
-            color: #16a34a;
-            font-size: 28px;
-            margin-bottom: 5px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            color: #ff5722;
+            font-size: 32px;
+            text-shadow: 2px 2px #fff3e0;
         }
-        .subtitle {
-            text-align: center;
-            color: #475569;
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 25px;
-        }
-        .banner-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        /* 互動地圖區域的專屬樣式 */
-        .map-section {
-            background: #ffffff;
-            border: 3px solid #67e8f9;
+        .party-info {
+            background-color: #e3f2fd;
             border-radius: 20px;
             padding: 15px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .map-title {
-            font-size: 18px;
+            text-align: center;
+            font-size: 20px;
             font-weight: bold;
-            color: #0891b2;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .map-placeholder {
-            width: 100%;
-            background: #f0fdfa;
-            border-radius: 12px;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: left;
-        }
-        .map-point {
-            font-size: 14px;
-            margin: 8px 0;
-            padding: 6px 12px;
-            border-left: 4px solid #22d3ee;
-            background: #e0f2fe;
-            border-radius: 0 8px 8px 0;
-            font-weight: bold;
+            color: #0d47a1;
+            margin-bottom: 30px;
+            border: 2px dashed #2196f3;
         }
         .timeline {
             position: relative;
+            padding: 10px 0;
         }
-        .time-card {
-            background: rgba(248, 250, 252, 0.9);
-            border-left: 6px solid #4ade80;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 0 15px 15px 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .time-card.important {
-            border-left-color: #f59e0b;
-            background: rgba(255, 251, 235, 0.9);
-        }
-        .time-card.fun {
-            border-left-color: #ec4899;
-            background: rgba(253, 242, 248, 0.9);
-        }
-        .time-display {
-            font-size: 18px;
-            font-weight: bold;
-            color: #ffffff;
-            display: inline-block;
-            background: #1e293b;
-            padding: 4px 12px;
+        .card {
+            background: #fff;
             border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 8px solid #4caf50;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.02);
+        }
+        .card-time {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4caf50;
+            display: inline-block;
+            background: #e8f5e9;
+            padding: 5px 15px;
+            border-radius: 15px;
             margin-bottom: 10px;
         }
-        .activity-title {
-            font-size: 20px;
+        .card-title {
+            font-size: 22px;
             font-weight: bold;
+            color: #1e88e5;
             margin: 5px 0;
-            color: #0f172a;
         }
-        .activity-desc {
-            font-size: 15px;
-            color: #334155;
+        .card-content {
+            font-size: 17px;
             line-height: 1.6;
+            color: #555;
         }
-        .card-img {
-            width: 100%;
-            max-height: 160px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin: 10px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+        /* 每個卡片有不同的小朋友專屬主題顏色 */
+        .c-transport { border-left-color: #ff9800; }
+        .c-transport .card-time { color: #ff9800; background: #fff3e0; }
+        .c-food { border-left-color: #e91e63; }
+        .c-food .card-time { color: #e91e63; background: #fce4ec; }
+        .c-hotel { border-left-color: #9c27b0; }
+        .c-hotel .card-time { color: #9c27b0; background: #f3e5f5; }
+        .c-drama { border-left-color: #00bcd4; }
+        .c-drama .card-time { color: #00bcd4; background: #e0f7fa; }
+
         .btn-link {
             display: inline-block;
-            margin-top: 8px;
-            padding: 8px 16px;
-            background-color: #2563eb;
+            background: #ff5722;
             color: white;
             text-decoration: none;
-            border-radius: 12px;
-            font-size: 14px;
+            padding: 8px 18px;
+            border-radius: 50px;
             font-weight: bold;
+            margin-top: 10px;
+            font-size: 15px;
+            box-shadow: 0 4px 0 #e64a19;
         }
-        .show-info {
-            background: #f0f9ff;
-            border: 2px dashed #0284c7;
-            padding: 15px;
-            border-radius: 15px;
-            margin-top: 12px;
-        }
-        .show-title {
-            color: #0369a1;
+        .btn-link:hover { background: #f4511e; }
+        
+        .price-tag {
+            display: inline-block;
+            background: #fff9c4;
+            color: #f57f17;
+            padding: 3px 10px;
+            border-radius: 8px;
             font-weight: bold;
             font-size: 16px;
-            margin-bottom: 5px;
+            margin-top: 5px;
+            border: 1px solid #fff59d;
         }
-        .child-recommend {
-            margin-top: 8px;
+        .home-list {
+            margin: 10px 0;
             padding-left: 20px;
-            color: #b45309;
-            font-size: 14px;
-            line-height: 1.6;
+        }
+        .home-list li {
+            margin-bottom: 8px;
+        }
+        /* 地圖區域樣式 */
+        .map-section {
+            margin-top: 40px;
+            background: #f1f8e9;
+            border-radius: 25px;
+            padding: 20px;
+            border: 3px solid #8bc34a;
+        }
+        .map-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #33691e;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #ccc;
         }
     </style>
+    <!-- 引入高德地圖 API -->
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            securityJsCode: '您的高德安全密鑰', // 請替換您的高德地圖安全密鑰
+        }
+    </script>
+    <script type="text/javascript" src="https://amap.com"></script> <!-- 請替換您的Key -->
 </head>
 <body>
 
 <div class="container">
-    <img src="https://unsplash.com" alt="深圳現代都市" class="banner-img">
+    <h1>🌟 4大6小大手拉小手！深圳前海快樂大冒險 🌟</h1>
     
-    <h1>🌟 我的深圳前海大冒險！ 🌟</h1>
-    <div class="subtitle">🚏 第一天（Day 1）城市與魔法音樂之旅</div>
-
-    <!-- 🗺️ 互動地圖區域 -->
-    <div class="map-section">
-        <div class="map-title">🗺️ 大冒險雷達地圖導航</div>
-        <div class="map-placeholder">
-            <p style="margin-top: 0; font-size: 14px; color: #4b5563;">跟著地圖上的冒險標記，出發去尋寶吧：</p>
-            <div class="map-point" style="border-left-color: #f59e0b; background: #fffbeb;">🏁 起點：深圳灣口岸 (大冒險集合起點)</div>
-            <div class="map-point" style="border-left-color: #3b82f6; background: #eff6ff;">🛍️ 購物玩樂：K11 ECOAST 蛇口太子灣 (午餐、散步、超級市場)</div>
-            <div class="map-point" style="border-left-color: #ec4899; background: #fdf2f8;">🎭 魔法舞台：深圳濱海藝術中心 (看《瑪蒂爾達》音樂劇)</div>
-        </div>
+    <div class="party-info">
+        愛探險的小隊員名單：🧑‍🤝‍🧑 4位大超人 + 🎒 6位小勇士 = 10人出發！
     </div>
 
     <div class="timeline">
 
         <!-- 11:00 -->
-        <div class="time-card important">
-            <div class="time-display">⏰ 11:00</div>
-            <div class="activity-title">🚌 深圳灣口岸集合</div>
-            <div class="activity-desc">準備出發！拿好你的小背包，和爸爸媽媽一起在深圳灣口岸大門口集合，準備過關去深圳前海大冒險囉！</div>
+        <div class="card c-transport">
+            <span class="card-time">11:00</span>
+            <div class="card-title">🇨🇳 第一站：深圳灣口岸集合囉！</div>
+            <div class="card-content">
+                <strong>💡 4個家庭的出發小指南（請看手錶準時出發）：</strong>
+                <ul class="home-list">
+                    <li>🏡 <strong>葵涌寶星中心</strong>：建議 <b>09:50</b> 出發。搭乘的士到兆康站轉乘屯馬綫，或直接坐的士去深圳灣，大約 1 小時到。</li>
+                    <li>🏡 <strong>葵涌昇柏山</strong>：建議 <b>09:50</b> 出發。坐的士下山到荃灣西站，轉屯馬綫到天水圍站，再換乘 B2X 巴士直達深圳灣。</li>
+                    <li>🏡 <strong>馬灣（珀麗灣）</strong>：建議 <b>09:30</b> 出發。先搭珀麗灣居民巴士到青衣站，轉東涌綫到南昌站，再轉屯馬綫到天水圍，最後坐 B2X 巴士。</li>
+                    <li>🏡 <strong>荃灣金麗苑</strong>：建議 <b>10:00</b> 出發。直接召喚大的一部過，經屯門公路直接衝向深圳灣口岸，大約 45 分鐘最方便！</li>
+                </ul>
+                <span class="price-tag">💰 香港交通費：各家自理</span>
+            </div>
         </div>
 
         <!-- 12:00 -->
-        <div class="time-card fun">
-            <div class="time-display">⏰ 12:00</div>
-            <div class="activity-title">🥞 到達 K11 食午飯</div>
-            <div class="activity-desc">肚子咕嚕嚕了嗎？我們到達超漂亮的全新巨輪商場 <b>K11 ECOAST</b> 啦！這裡靠著海邊，有很多好吃的親子餐廳，一起去吃美味的午餐吧！</div>
-            <img src="https://unsplash.com" alt="現代藝術商場" class="card-img">
-            <a href="https://trip.com" class="btn-link" target="_blank">🔗 看看 K11 ECOAST 開業直擊</a>
+        <div class="card c-food">
+            <span class="card-time">12:00</span>
+            <div class="card-title">🚗 坐滴滴去 K11 ECOAST 吃大餐！</div>
+            <div class="card-content">
+                大家過關後，我們要一邊看著海，一邊坐滴滴出行（需要叫 2 輛大車或 3 輛小車）前往全新開幕的超級地標 <strong>K11 ECOAST</strong>！<br>
+                <strong>😋 中午吃甚麼？</strong> 裡面有超多適合小朋友的餐廳（如精緻粵菜、創意西餐、親子主題輕食）。<br>
+                <a href="https://hkmytravel.com/sz/shoppingmall/shenzhen-metro-line-12-shoppingmall/taiziwan/k11-ecoast/" target="_blank" class="btn-link">👉 點我看看 K11 ECOAST 詳細介紹</a><br>
+                <span class="price-tag">💰 預估滴滴車資：約 ¥30 - ¥40 / 輛車</span> | <span class="price-tag">🍔 午餐費用：約 ¥60 - ¥100 / 人</span>
+            </div>
         </div>
 
         <!-- 13:30 -->
-        <div class="time-card fun">
-            <div class="time-display">⏰ 13:30</div>
-            <div class="activity-title">🧸 閒逛 K11 尋寶去</div>
-            <div class="activity-desc">吃飽飽來散步！商場超級大，還有好多專門為小朋友設計的超酷玩樂景點：</div>
-            <img src="https://unsplash.com" alt="兒童遊樂與運動場" class="card-img">
-            <ul class="child-recommend">
-                <li><b>Wandering 室內外滑板場：</b> 可以看大哥哥大姐姐玩超酷的滑板和花式特技！</li>
-                <li><b>朗玩室內遊樂場：</b> 裡面有超多好玩的電子遊戲、保齡球和兒童放電設施！</li>
-                <li><b>戶外空中步道與海濱長廊：</b> 可以一邊散步，一邊看美麗的大海和超長的深圳灣大橋喔！</li>
-            </ul>
+        <div class="card">
+            <span class="card-time">13:30</span>
+            <div class="card-title">🎨 閒逛 K11 ECOAST 藝術大城堡</div>
+            <div class="card-content">
+                這座商場超級大！外觀長得像一艘停在海邊的巨型大輪船 🚢！裡面有滿月形狀的亮晶晶雕塑。
+                帶小朋友去 <strong>K11 HACC 藝術展覽空間</strong> 看好玩的展覽，或者去海濱長廊吹海風、看大船，超級舒服！
+            </div>
         </div>
 
         <!-- 14:30 -->
-        <div class="time-card">
-            <div class="time-display">⏰ 14:30</div>
-            <div class="activity-title">🚕 前往酒店</div>
-            <div class="activity-desc">把行李拿去放！坐上舒適的車車，出發去我們今晚要住的漂亮酒店。</div>
+        <div class="card c-hotel">
+            <span class="card-time">14:30</span>
+            <div class="card-title">🚗 坐滴滴去飯店，準備拿房間！</div>
+            <div class="card-content">
+                我們要從 K11 出發，坐上滴滴出行，前往今天睡覺的漂亮基地！<br>
+                <span class="price-tag">💰 預估滴滴車資：約 ¥40 - ¥50 / 輛車</span>
+            </div>
         </div>
 
         <!-- 15:00 -->
-        <div class="time-card">
-            <div class="time-display">⏰ 15:00</div>
-            <div class="activity-title">🔑 酒店 Check in</div>
-            <div class="activity-desc">抵達酒店！拿到房間鑰匙囉，進房間休息一下下，在舒服的大床上充滿電，順便把行李箱放好。</div>
+        <div class="card c-hotel">
+            <span class="card-time">15:00</span>
+            <div class="card-title">🏨 飯店 Check-in 囉！</div>
+            <div class="card-content">
+                抵達 <strong>深圳前海寶安中心 CitiGO RESERVE 酒店</strong>！這是一家充滿科技感、帥氣又好玩的酒店。房間很漂亮，床很舒服，小朋友一定會喜歡！大人的手續辦好後，我們就可以把行李放進房間囉。<br>
+                <a href="https://hk.trip.com/" target="_blank" class="btn-link">🏨 經由 Trip.com 預訂/查看酒店細節</a><br>
+                <span class="price-tag">💰 預估住宿費：雙人房約 ¥450 - ¥700 / 晚</span>
+            </div>
         </div>
 
         <!-- 15:30 -->
-        <div class="time-card fun">
-            <div class="time-display">⏰ 15:30</div>
-            <div class="activity-title">🛒 逛鄰近超級市場</div>
-            <div class="activity-desc">出發去酒店附近的超級市場（例如 K11 內的大型永輝超市）！裡面有整整好幾排新奇的內地人氣零食、現切水果和小玩具，快來挑選你喜歡的小點心吧。</div>
-            <img src="https://unsplash.com" alt="超級市場" class="card-img">
+        <div class="card">
+            <span class="card-time">15:30</span>
+            <div class="card-title">🛒 超市大探險！零食補給時間</div>
+            <div class="card-content">
+                酒店附近就是超大的商圈，我們會去鄰近的超級市場（例如前海壹方城的超大超市）。
+                小勇士們可以挑選自己喜歡的內地限定小零食、水果和飲品，為晚上的音樂劇補充體力！
+            </div>
         </div>
 
         <!-- 17:00 -->
-        <div class="time-card">
-            <div class="time-display">⏰ 17:00</div>
-            <div class="activity-title">🚀 出發去晚餐</div>
-            <div class="activity-desc">摸摸肚子，又到了尋找美食的時間！我們出發前往吃晚餐的地點。</div>
+        <div class="card c-food">
+            <span class="card-time">17:00</span>
+            <div class="card-title">🚶‍♂️ 出發！散步去吃美味晚餐</div>
+            <div class="card-content">
+                肚子開始咕嚕嚕叫了，我們整理好小背包，從酒店步行或者搭一下下車，前往吃晚餐的地方。
+            </div>
         </div>
 
         <!-- 17:30 -->
-        <div class="time-card fun">
-            <div class="time-display">⏰ 17:30</div>
-            <div class="activity-title">🍲 享用美味晚餐</div>
-            <div class="activity-desc">和家人聚在一起，開開心心地吃一頓豐富又好吃的晚餐，為等一下的重頭戲音樂劇補充精神！</div>
+        <div class="card c-food">
+            <span class="card-time">17:30</span>
+            <div class="card-title">🍗 豐富晚餐派對</div>
+            <div class="card-content">
+                在前海寶安中心附近享用豐富晚餐。建議去壹方城吃深受小朋友喜愛的烤肉、椰子雞或者港式茶餐廳，大家一起吃得飽飽的！<br>
+                <span class="price-tag">💰 預估晚餐：約 ¥80 - ¥120 / 人</span>
+            </div>
         </div>
 
         <!-- 19:00 -->
-        <div class="time-card">
-            <div class="time-display">⏰ 19:00</div>
-            <div class="activity-title">🚶‍♂️ 離開前往海濱藝術中心</div>
-            <div class="activity-desc">我們要去一個叫「灣區之聲」的超酷白色鋼琴造型建築——<b>深圳濱海藝術中心</b>，準備去看今晚最期待的表演！</div>
-            <img src="https://unsplash.com" alt="舞台與劇院藝術中心" class="card-img">
+        <div class="card c-drama">
+            <span class="card-time">19:00</span>
+            <div class="card-title">🚶‍♂️ 前往海濱藝術中心大劇院</div>
+            <div class="card-content">
+                吃飽飯後，我們散步前往美麗的<strong>深圳濱海藝術中心</strong>。這座建築晚上會亮起漂亮的燈光，像夜空中的珍珠一樣！
+            </div>
         </div>
 
         <!-- 19:30 -->
-        <div class="time-card fun">
-            <div class="time-display">⏰ 19:30</div>
-            <div class="activity-title">🎭 睇 Show：倫敦西區原版音樂劇《玛蒂尔达》</div>
-            <div class="activity-desc">坐好囉！精彩的魔幻舞台劇馬上就要開始了！</div>
-            
-            <img src="https://unsplash.com" alt="Matilda 音樂劇舞台感插圖" class="card-img">
+        <div class="card c-drama">
+            <span class="card-time">19:30</span>
+            <div class="card-title">🎭 重頭戲：觀賞倫敦西區原版音樂劇《瑪蒂爾達》</div>
+            <div class="card-content">
+                <strong>📖 《瑪蒂爾達》(Matilda) 故事簡介：</strong><br>
+                這是一個關於一位超厲害、超聰明的小女孩瑪蒂爾達的故事！她非常喜歡看書，雖然遇到了壞壞的校長和不理解她的父母，但她用自己神奇的超能力、無比的勇氣和智慧，勇敢地對抗不公平的事，成功改變了自己的命運喔！舞台上會有超炫的盪鞦韆和好聽的音樂，小朋友一定會看得目不轉睛！<br>
+                🕒 <b>預估完結時間：</b> 約 <b>22:00</b>（演出時間約 2.5 小時，含中場休息）。<br>
+                <a href="http://www.szbo.com.cn/piao/4/15050.html?v=1011113205" target="_blank" class="btn-link">🎟️ 深圳濱海藝術中心官方購票網頁</a>
+            </div>
+        </div>
 
-            <div class="show-info">
-                <div class="show-title">📖 故事大綱（小朋友看得懂版）：</div>
-                <div class="activity-desc" style="font-size: 14px;">
-
-<layout>
-dynamicMap(
-  anchors=[
-    Anchor(anchorId=0, lookup=[EntityLocal(query="深圳灣口岸, 中國廣東省深圳市南山區", entityType="LOCAL_PLACE")], anchorType="NEAR")
-  ],
-  locations=[
-    Location(locationId=0, lookup=[EntityLocal(query="深圳灣口岸, 中國廣東省深圳市南山區", entityType="LOCAL_PLACE")], justification="大冒險起點：中港過關集合點", tierType="RESULT"),
-    Location(locationId=1, lookup=[EntityLocal(query="K11 ECOAST, 中國廣東省深圳市南山區蛇口太子灣", entityType="LOCAL_PLACE")], justification="海濱旗艦藝術商場：吃午餐與逛超市放電", tierType="RESULT"),
-    Location(locationId=2, lookup=[EntityLocal(query="深圳濱海藝術中心, 中國廣東省深圳市寶安區歡樂港灣", entityType="LOCAL_PLACE")], justification="「灣區之聲」劇院：晚上看瑪蒂爾達音樂劇", tierType="RESULT")
-  ],
-  categories=[
-    Category(categoryId=0, locationIds=[0], displayTitle="出發口岸", color="YELLOW"),
-    Category(categoryId=1, locationIds=[1], displayTitle="下午玩樂與商場", color="BLUE"),
-    Category(categoryId=2, locationIds=[2], displayTitle="晚間藝術演出", color="PURPLE")
-  ],
-  primary=Primary(justification="展示第一天前海與蛇口大冒險所有據點的相對位置")
-)
-</layout>
-
-<FollowUp>
-如果已經確定了**入住的酒店**或**吃晚餐的具體商圈（如壹方城或萬象前海）**，請隨時告訴我，我來幫你在地圖與行程表內精確定位！
-</FollowUp>
+        <!-- 22:00 -->
+        <div class="card c-hotel">
+            <span class="card-time">22:00</span>
+            <div class="card-title">💤 坐滴滴回飯店睡個好覺</div>
+            <div class="card-content">
+                精采的音樂劇結束囉！小勇士們辛苦了，我們立刻搭乘滴滴出行返回酒店休息，做個甜甜的美夢，準備明天的活動！<br>
