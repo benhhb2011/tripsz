@@ -7,7 +7,9 @@
     <style>
         body {
             font-family: 'Comic Sans MS', 'Chalkboard SE', 'Microsoft JhengHei', sans-serif;
-            background-color: #f0fdf4;
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), 
+                        url('https://unsplash.com') no-repeat center center fixed;
+            background-size: cover;
             color: #1e293b;
             margin: 0;
             padding: 20px;
@@ -15,83 +17,135 @@
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.92); 
+            backdrop-filter: blur(10px);
             border-radius: 30px;
             padding: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 4px solid #bbf7d0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 4px solid #4ade80;
         }
         h1 {
             text-align: center;
             color: #16a34a;
             font-size: 28px;
             margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         .subtitle {
             text-align: center;
-            color: #64748b;
+            color: #475569;
             font-size: 16px;
+            font-weight: bold;
             margin-bottom: 25px;
+        }
+        .banner-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        /* 互動地圖區域的專屬樣式 */
+        .map-section {
+            background: #ffffff;
+            border: 3px solid #67e8f9;
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .map-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0891b2;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .map-placeholder {
+            width: 100%;
+            background: #f0fdfa;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+        .map-point {
+            font-size: 14px;
+            margin: 8px 0;
+            padding: 6px 12px;
+            border-left: 4px solid #22d3ee;
+            background: #e0f2fe;
+            border-radius: 0 8px 8px 0;
+            font-weight: bold;
         }
         .timeline {
             position: relative;
         }
         .time-card {
-            background: #f8fafc;
+            background: rgba(248, 250, 252, 0.9);
             border-left: 6px solid #4ade80;
             padding: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border-radius: 0 15px 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         .time-card.important {
             border-left-color: #f59e0b;
-            background: #fffbeb;
+            background: rgba(255, 251, 235, 0.9);
         }
         .time-card.fun {
             border-left-color: #ec4899;
-            background: #fdf2f8;
+            background: rgba(253, 242, 248, 0.9);
         }
         .time-display {
             font-size: 18px;
             font-weight: bold;
-            color: #0f172a;
+            color: #ffffff;
             display: inline-block;
-            background: #e2e8f0;
-            padding: 2px 10px;
+            background: #1e293b;
+            padding: 4px 12px;
             border-radius: 20px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         .activity-title {
             font-size: 20px;
             font-weight: bold;
             margin: 5px 0;
+            color: #0f172a;
         }
         .activity-desc {
             font-size: 15px;
-            color: #475569;
-            line-height: 1.5;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .card-img {
+            width: 100%;
+            max-height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         .btn-link {
             display: inline-block;
             margin-top: 8px;
-            padding: 6px 12px;
-            background-color: #3b82f6;
+            padding: 8px 16px;
+            background-color: #2563eb;
             color: white;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 14px;
             font-weight: bold;
         }
-        .btn-link:hover {
-            background-color: #2563eb;
-        }
         .show-info {
-            background: #e0f2fe;
+            background: #f0f9ff;
             border: 2px dashed #0284c7;
             padding: 15px;
             border-radius: 15px;
-            margin-top: 10px;
+            margin-top: 12px;
         }
         .show-title {
             color: #0369a1;
@@ -104,14 +158,28 @@
             padding-left: 20px;
             color: #b45309;
             font-size: 14px;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <img src="https://unsplash.com" alt="深圳現代都市" class="banner-img">
+    
     <h1>🌟 我的深圳前海大冒險！ 🌟</h1>
-    <div class="subtitle">第一天（Day 1）好玩行程滿滿！</div>
+    <div class="subtitle">🚏 第一天（Day 1）城市與魔法音樂之旅</div>
+
+    <!-- 🗺️ 互動地圖區域 -->
+    <div class="map-section">
+        <div class="map-title">🗺️ 大冒險雷達地圖導航</div>
+        <div class="map-placeholder">
+            <p style="margin-top: 0; font-size: 14px; color: #4b5563;">跟著地圖上的冒險標記，出發去尋寶吧：</p>
+            <div class="map-point" style="border-left-color: #f59e0b; background: #fffbeb;">🏁 起點：深圳灣口岸 (大冒險集合起點)</div>
+            <div class="map-point" style="border-left-color: #3b82f6; background: #eff6ff;">🛍️ 購物玩樂：K11 ECOAST 蛇口太子灣 (午餐、散步、超級市場)</div>
+            <div class="map-point" style="border-left-color: #ec4899; background: #fdf2f8;">🎭 魔法舞台：深圳濱海藝術中心 (看《瑪蒂爾達》音樂劇)</div>
+        </div>
+    </div>
 
     <div class="timeline">
 
@@ -119,26 +187,28 @@
         <div class="time-card important">
             <div class="time-display">⏰ 11:00</div>
             <div class="activity-title">🚌 深圳灣口岸集合</div>
-            <div class="activity-desc">準備出發！拿好你的小背包，和爸爸媽媽一起在深圳灣口岸集合，準備過關去冒險囉！</div>
+            <div class="activity-desc">準備出發！拿好你的小背包，和爸爸媽媽一起在深圳灣口岸大門口集合，準備過關去深圳前海大冒險囉！</div>
         </div>
 
         <!-- 12:00 -->
         <div class="time-card fun">
             <div class="time-display">⏰ 12:00</div>
             <div class="activity-title">🥞 到達 K11 食午飯</div>
-            <div class="activity-desc">肚子咕嚕嚕了嗎？我們到達超漂亮的全新巨輪商場 <b>K11 ECOAST</b> 啦！這裡有很多好吃的餐廳，一起去吃美味的午餐吧！</div>
-            <a href="https://hk.trip.com/guide/destination/%E6%B7%B1%E5%9C%B3K11.html" class="btn-link" target="_blank">🔗 看看 K11 ECOAST 介紹</a>
+            <div class="activity-desc">肚子咕嚕嚕了嗎？我們到達超漂亮的全新巨輪商場 <b>K11 ECOAST</b> 啦！這裡靠著海邊，有很多好吃的親子餐廳，一起去吃美味的午餐吧！</div>
+            <img src="https://unsplash.com" alt="現代藝術商場" class="card-img">
+            <a href="https://trip.com" class="btn-link" target="_blank">🔗 看看 K11 ECOAST 開業直擊</a>
         </div>
 
         <!-- 13:30 -->
         <div class="time-card fun">
             <div class="time-display">⏰ 13:30</div>
             <div class="activity-title">🧸 閒逛 K11 尋寶去</div>
-            <div class="activity-desc">吃飽飽來散步！商場超級大，還有好多適合小朋友玩樂和打卡的地方：</div>
+            <div class="activity-desc">吃飽飽來散步！商場超級大，還有好多專門為小朋友設計的超酷玩樂景點：</div>
+            <img src="https://unsplash.com" alt="兒童遊樂與運動場" class="card-img">
             <ul class="child-recommend">
-                <li><b>Wandering 室內外滑板場：</b> 可以看大哥哥大姐姐玩超酷的滑板！</li>
-                <li><b>朗玩室內遊樂場：</b> 裡面有超多好玩的電子遊戲和遊樂設施！</li>
-                <li><b>戶外空中步道與海濱長廊：</b> 可以一邊散步，一邊看美麗的大海和深圳灣大橋喔！</li>
+                <li><b>Wandering 室內外滑板場：</b> 可以看大哥哥大姐姐玩超酷的滑板和花式特技！</li>
+                <li><b>朗玩室內遊樂場：</b> 裡面有超多好玩的電子遊戲、保齡球和兒童放電設施！</li>
+                <li><b>戶外空中步道與海濱長廊：</b> 可以一邊散步，一邊看美麗的大海和超長的深圳灣大橋喔！</li>
             </ul>
         </div>
 
@@ -146,21 +216,22 @@
         <div class="time-card">
             <div class="time-display">⏰ 14:30</div>
             <div class="activity-title">🚕 前往酒店</div>
-            <div class="activity-desc">把行李拿去放！坐上車車，出發去我們今晚要住的漂亮酒店。</div>
+            <div class="activity-desc">把行李拿去放！坐上舒適的車車，出發去我們今晚要住的漂亮酒店。</div>
         </div>
 
         <!-- 15:00 -->
         <div class="time-card">
             <div class="time-display">⏰ 15:00</div>
             <div class="activity-title">🔑 酒店 Check in</div>
-            <div class="activity-desc">抵達酒店！拿到房間鑰匙囉，進房間休息一下下，順便把行李箱放好。</div>
+            <div class="activity-desc">抵達酒店！拿到房間鑰匙囉，進房間休息一下下，在舒服的大床上充滿電，順便把行李箱放好。</div>
         </div>
 
         <!-- 15:30 -->
         <div class="time-card fun">
             <div class="time-display">⏰ 15:30</div>
             <div class="activity-title">🛒 逛鄰近超級市場</div>
-            <div class="activity-desc">出發去酒店附近的超級市場（例如 K11 內的大型永輝超市）！裡面有很多新奇的零食、水果和小玩具，快來挑選你喜歡的小點心吧。</div>
+            <div class="activity-desc">出發去酒店附近的超級市場（例如 K11 內的大型永輝超市）！裡面有整整好幾排新奇的內地人氣零食、現切水果和小玩具，快來挑選你喜歡的小點心吧。</div>
+            <img src="https://unsplash.com" alt="超級市場" class="card-img">
         </div>
 
         <!-- 17:00 -->
@@ -174,33 +245,48 @@
         <div class="time-card fun">
             <div class="time-display">⏰ 17:30</div>
             <div class="activity-title">🍲 享用美味晚餐</div>
-            <div class="activity-desc">和家人聚在一起，開開心心地吃一頓豐富又好吃的晚餐，為等一下的重頭戲補充體力！</div>
+            <div class="activity-desc">和家人聚在一起，開開心心地吃一頓豐富又好吃的晚餐，為等一下的重頭戲音樂劇補充精神！</div>
         </div>
 
         <!-- 19:00 -->
         <div class="time-card">
             <div class="time-display">⏰ 19:00</div>
             <div class="activity-title">🚶‍♂️ 離開前往海濱藝術中心</div>
-            <div class="activity-desc">我們要去一個叫「灣區之聲」的超酷建築——<b>深圳濱海藝術中心</b>，準備去看今晚最期待的表演！</div>
+            <div class="activity-desc">我們要去一個叫「灣區之聲」的超酷白色鋼琴造型建築——<b>深圳濱海藝術中心</b>，準備去看今晚最期待的表演！</div>
+            <img src="https://unsplash.com" alt="舞台與劇院藝術中心" class="card-img">
         </div>
 
         <!-- 19:30 -->
         <div class="time-card fun">
             <div class="time-display">⏰ 19:30</div>
-            <div class="activity-title">🎭 睇 Show：倫敦西區原版音樂劇《瑪蒂爾達》</div>
+            <div class="activity-title">🎭 睇 Show：倫敦西區原版音樂劇《玛蒂尔达》</div>
             <div class="activity-desc">坐好囉！精彩的魔幻舞台劇馬上就要開始了！</div>
             
+            <img src="https://unsplash.com" alt="Matilda 音樂劇舞台感插圖" class="card-img">
+
             <div class="show-info">
                 <div class="show-title">📖 故事大綱（小朋友看得懂版）：</div>
                 <div class="activity-desc" style="font-size: 14px;">
-                    故事主角是一個叫<b>瑪蒂爾達（Matilda）</b>的5歲小女孩。她非常非常聰明，而且超級喜歡看書！雖然她的壞爸爸媽媽不關心她，學校裡還有一個很兇、愛欺負人的校長，但勇敢的瑪蒂爾達不害怕。當她發現自己居然有神奇的<b>「超能力」</b>時，她用智慧和搞笑的小惡作劇，帶領學校的小朋友們一起對抗壞人，改變了自己的命運！這是一個充滿好聽音樂、神奇魔術和勇氣的超讚故事喔！
-                </div>
-            </div>
-            <a href="http://www.szbo.com.cn/piao/4/15050.html?v=1011113205" class="btn-link" target="_blank" style="background-color: #ec4899;">🎟️ 官方購票連結 / 劇目介紹</a>
-        </div>
 
-    </div>
-</div>
+<layout>
+dynamicMap(
+  anchors=[
+    Anchor(anchorId=0, lookup=[EntityLocal(query="深圳灣口岸, 中國廣東省深圳市南山區", entityType="LOCAL_PLACE")], anchorType="NEAR")
+  ],
+  locations=[
+    Location(locationId=0, lookup=[EntityLocal(query="深圳灣口岸, 中國廣東省深圳市南山區", entityType="LOCAL_PLACE")], justification="大冒險起點：中港過關集合點", tierType="RESULT"),
+    Location(locationId=1, lookup=[EntityLocal(query="K11 ECOAST, 中國廣東省深圳市南山區蛇口太子灣", entityType="LOCAL_PLACE")], justification="海濱旗艦藝術商場：吃午餐與逛超市放電", tierType="RESULT"),
+    Location(locationId=2, lookup=[EntityLocal(query="深圳濱海藝術中心, 中國廣東省深圳市寶安區歡樂港灣", entityType="LOCAL_PLACE")], justification="「灣區之聲」劇院：晚上看瑪蒂爾達音樂劇", tierType="RESULT")
+  ],
+  categories=[
+    Category(categoryId=0, locationIds=[0], displayTitle="出發口岸", color="YELLOW"),
+    Category(categoryId=1, locationIds=[1], displayTitle="下午玩樂與商場", color="BLUE"),
+    Category(categoryId=2, locationIds=[2], displayTitle="晚間藝術演出", color="PURPLE")
+  ],
+  primary=Primary(justification="展示第一天前海與蛇口大冒險所有據點的相對位置")
+)
+</layout>
 
-</body>
-</html>
+<FollowUp>
+如果已經確定了**入住的酒店**或**吃晚餐的具體商圈（如壹方城或萬象前海）**，請隨時告訴我，我來幫你在地圖與行程表內精確定位！
+</FollowUp>
